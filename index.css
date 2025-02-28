@@ -3,7 +3,7 @@ body {
     height: 100vh;
     width: 100vw;
     background-blend-mode: overlay;
-    background: url(./ball.jpg),url(./statue.jpg),linear-gradient(to right, rgb(255, 255, 231) , rgb(122, 122, 0));;
+    background: url(./ball.jpg),url(./statue.jpg),linear-gradient(to right, rgb(187, 187, 187) , rgb(204, 204, 204));;
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0;
