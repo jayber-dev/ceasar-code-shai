@@ -7,7 +7,7 @@ const date = document.querySelector(".date")
 const keyInput = document.querySelector('.key-input')
 
 let key = 1
-const letters = ["א","ב","ג","ד","ה","ו","ז","ח","ט","י","כ","ך","ל","מ","ם","נ","ן","ס","ע","פ",,"ף","צ","ץ","ק","ר","ש","ת"," "]
+const letters = ["א","ב","ג","ד","ה","ו","ז","ח","ט","י","כ","ך","ל","מ","ם","נ","ן","ס","ע","פ","ף","צ","ץ","ק","ר","ש","ת"," "]
 let c = ""
 let m = ""
 message.addEventListener('input', (e) => {
