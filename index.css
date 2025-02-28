@@ -1,0 +1,467 @@
+body {
+    /* background-color: rgb(174, 197, 43); */
+    height: 100vh;
+    width: 100vw;
+    background-blend-mode: overlay;
+    background: url(./ball.jpg),url(./statue.jpg),linear-gradient(to right, rgb(255, 255, 231) , rgb(122, 122, 0));;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color:whitesmoke;
+}
+
+.main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    border: 1px solid grey;
+    padding: 10px;
+    background-color: rgba(245, 245, 245, 0.747);
+    box-shadow: 0 0 10px 1px grey;
+
+  --color: rgba(114, 114, 114, 0.3);
+  background-color: #191a1a;
+  background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
+      linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
+  background-size: 55px 55px;
+}
+
+.secret {
+    background-color: chocolate;
+}
+
+/* From Uiverse.io by ilkhoeri */ 
+.button {
+    --h-button: 48px;
+    --w-button: 102px;
+    --round: 0.75rem;
+    cursor: pointer;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.25s ease;
+    background: radial-gradient(
+        65.28% 65.28% at 50% 100%,
+        rgba(223, 113, 255, 0.8) 0%,
+        rgba(223, 113, 255, 0) 100%
+      ),
+      linear-gradient(0deg, #7a5af8, #7a5af8);
+    border-radius: var(--round);
+    border: none;
+    outline: none;
+    padding: 12px 18px;
+  }
+  .button::before,
+  .button::after {
+    content: "";
+    position: absolute;
+    inset: var(--space);
+    transition: all 0.5s ease-in-out;
+    border-radius: calc(var(--round) - var(--space));
+    z-index: 0;
+  }
+  .button::before {
+    --space: 1px;
+    background: linear-gradient(
+      177.95deg,
+      rgba(255, 255, 255, 0.19) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+  .button::after {
+    --space: 2px;
+    background: radial-gradient(
+        65.28% 65.28% at 50% 100%,
+        rgba(223, 113, 255, 0.8) 0%,
+        rgba(223, 113, 255, 0) 100%
+      ),
+      linear-gradient(0deg, #7a5af8, #7a5af8);
+  }
+  .button:active {
+    transform: scale(0.95);
+  }
+  
+  .fold {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    transition: all 0.5s ease-in-out;
+    background: radial-gradient(
+      100% 75% at 55%,
+      rgba(223, 113, 255, 0.8) 0%,
+      rgba(223, 113, 255, 0) 100%
+    );
+    box-shadow: 0 0 3px black;
+    border-bottom-left-radius: 0.5rem;
+    border-top-right-radius: var(--round);
+  }
+  .fold::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150%;
+    height: 150%;
+    transform: rotate(45deg) translateX(0%) translateY(-18px);
+    background-color: #e8e8e8;
+    pointer-events: none;
+  }
+  .button:hover .fold {
+    margin-top: -1rem;
+    margin-right: -1rem;
+  }
+  
+  .points_wrapper {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .points_wrapper .point {
+    bottom: -10px;
+    position: absolute;
+    animation: floating-points infinite ease-in-out;
+    pointer-events: none;
+    width: 2px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 9999px;
+  }
+  @keyframes floating-points {
+    0% {
+      transform: translateY(0);
+    }
+    85% {
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(-55px);
+      opacity: 0;
+    }
+  }
+  .points_wrapper .point:nth-child(1) {
+    left: 10%;
+    opacity: 1;
+    animation-duration: 2.35s;
+    animation-delay: 0.2s;
+  }
+  .points_wrapper .point:nth-child(2) {
+    left: 30%;
+    opacity: 0.7;
+    animation-duration: 2.5s;
+    animation-delay: 0.5s;
+  }
+  .points_wrapper .point:nth-child(3) {
+    left: 25%;
+    opacity: 0.8;
+    animation-duration: 2.2s;
+    animation-delay: 0.1s;
+  }
+  .points_wrapper .point:nth-child(4) {
+    left: 44%;
+    opacity: 0.6;
+    animation-duration: 2.05s;
+  }
+  .points_wrapper .point:nth-child(5) {
+    left: 50%;
+    opacity: 1;
+    animation-duration: 1.9s;
+  }
+  .points_wrapper .point:nth-child(6) {
+    left: 75%;
+    opacity: 0.5;
+    animation-duration: 1.5s;
+    animation-delay: 1.5s;
+  }
+  .points_wrapper .point:nth-child(7) {
+    left: 88%;
+    opacity: 0.9;
+    animation-duration: 2.2s;
+    animation-delay: 0.2s;
+  }
+  .points_wrapper .point:nth-child(8) {
+    left: 58%;
+    opacity: 0.8;
+    animation-duration: 2.25s;
+    animation-delay: 0.2s;
+  }
+  .points_wrapper .point:nth-child(9) {
+    left: 98%;
+    opacity: 0.6;
+    animation-duration: 2.6s;
+    animation-delay: 0.1s;
+  }
+  .points_wrapper .point:nth-child(10) {
+    left: 65%;
+    opacity: 1;
+    animation-duration: 2.5s;
+    animation-delay: 0.2s;
+  }
+  
+  .inner {
+    z-index: 2;
+    gap: 6px;
+    position: relative;
+    width: 100%;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .inner svg.icon {
+    width: 18px;
+    height: 18px;
+    transition: fill 0.1s linear;
+  }
+  
+  .button:focus svg.icon {
+    fill: white;
+  }
+  .button:hover svg.icon {
+    fill: transparent;
+    animation:
+      dasharray 1s linear forwards,
+      filled 0.1s linear forwards 0.95s;
+  }
+  @keyframes dasharray {
+    from {
+      stroke-dasharray: 0 0 0 0;
+    }
+    to {
+      stroke-dasharray: 68 68 0 0;
+    }
+  }
+  @keyframes filled {
+    to {
+      fill: white;
+    }
+  }
+  
+/* From Uiverse.io by EddyBel */ 
+.input__container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.664);
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: 22px;
+    max-width: 300px;
+    transition: transform 400ms;
+    transform-style: preserve-3d;
+    transform: rotateX(15deg) rotateY(-20deg);
+    perspective: 500px;
+    direction: rtl;
+  }
+  
+  .shadow__input {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    filter: blur(30px);
+    border-radius: 20px;
+    background-color: #999cff;
+    background-image: radial-gradient(at 85% 51%, hsla(60,60%,61%,1) 0px, transparent 50%),
+      radial-gradient(at 74% 68%, hsla(235,69%,77%,1) 0px, transparent 50%),
+      radial-gradient(at 64% 79%, hsla(284,72%,73%,1) 0px, transparent 50%),
+      radial-gradient(at 75% 16%, hsla(283,60%,72%,1) 0px, transparent 50%),
+      radial-gradient(at 90% 65%, hsla(153,70%,64%,1) 0px, transparent 50%),
+      radial-gradient(at 91% 83%, hsla(283,74%,69%,1) 0px, transparent 50%),
+      radial-gradient(at 72% 91%, hsla(213,75%,75%,1) 0px, transparent 50%);
+  }
+  
+  .input__button__shadow {
+    cursor: pointer;
+    border: none;
+    background: none;
+    transition: transform 400ms, background 400ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    padding: 5px;
+  }
+  
+  .input__button__shadow:hover {
+    background: rgba(255, 255, 255, 0.411);
+  }
+  
+  .input__search {
+    width: 100%;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    padding: 8px;
+    position: relative;
+  }
+
+/* From Uiverse.io by gharsh11032000 */ 
+.card {
+    display: none;
+    margin-top: 20px;
+    width: 320px;
+    height: fit-content;
+    padding: 20px;
+    color: white;
+    background: linear-gradient(#212121, #212121) padding-box,
+                linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) border-box;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    
+    flex-direction: column;
+    cursor: pointer;
+    transform-origin: right bottom;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .card .main-content {
+    flex: 1;
+  }
+  
+  .card .header span:first-child {
+    font-weight: 600;
+    color: #717171;
+    margin-right: 4px;
+  }
+  
+  .card .heading {
+    text-wrap: inherit;
+    font-size: 24px;
+    margin: 24px 0 16px;
+    font-weight: 600;
+    text-overflow: clip;
+    overflow: scroll;
+    padding: 10px;
+  }
+  
+  .card .categories {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .card .categories span {
+    background-color: #e81cff;
+    padding: 4px 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 50em;
+  }
+  
+  .card .footer {
+    font-weight: 600;
+    color: #717171;
+    margin-right: 4px;
+  }
+  
+  .card:hover {
+    rotate: 8deg;
+  }
+
+  .key-container {
+    position: relative;
+    background: linear-gradient(135deg, rgb(179, 208, 253) 0%, rgb(164, 202, 248) 100%);
+    border-radius: 1000px;
+    padding: 10px;
+    display: grid;
+    place-content: center;
+    z-index: 0;
+    max-width: 300px;
+    margin: 0 10px;
+  }
+  
+  .search-container {
+    position: relative;
+    width: 100%;
+    border-radius: 50px;
+    background: linear-gradient(135deg, rgb(218, 232, 247) 0%, rgb(214, 229, 247) 100%);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-container::after, .search-container::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    position: absolute;
+  }
+  
+  .search-container::before {
+    top: -1px;
+    left: -1px;
+    background: linear-gradient(0deg, rgb(218, 232, 247) 0%, rgb(255, 255, 255) 100%);
+    z-index: -1;
+  }
+  
+  .search-container::after {
+    bottom: -1px;
+    right: -1px;
+    background: linear-gradient(0deg, rgb(163, 206, 255) 0%, rgb(211, 232, 255) 100%);
+    box-shadow: rgba(79, 156, 232, 0.7019607843) 3px 3px 5px 0px, rgba(79, 156, 232, 0.7019607843) 5px 5px 20px 0px;
+    z-index: -2;
+  }
+  
+  .key-input {
+    direction: rtl;
+    padding: 10px;
+    width: 100%;
+    background: linear-gradient(135deg, rgb(218, 232, 247) 0%, rgb(214, 229, 247) 100%);
+    border: none;
+    color: #9EBCD9;
+    font-size: 20px;
+    border-radius: 50px;
+  }
+  
+  .key-input:focus {
+    outline: none;
+    background: linear-gradient(135deg, rgb(239, 247, 255) 0%, rgb(214, 229, 247) 100%);
+  }
+  
+  .search__icon {
+    width: 50px;
+    aspect-ratio: 1;
+    border-left: 2px solid white;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-radius: 50%;
+    padding-left: 12px;
+    margin-right: 10px;
+  }
+  
+  .search__icon:hover {
+    border-left: 3px solid white;
+  }
+  
+  .search__icon path {
+    fill: white;
+  }
